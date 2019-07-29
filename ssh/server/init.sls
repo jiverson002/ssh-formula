@@ -21,8 +21,8 @@ sshd:
   service.running:
     - enable: True
     - require:
+      - pam
       - group: sshd
-      - pkg: pam
       - pkg: sshd
       - file: /etc/motd
     - watch:
